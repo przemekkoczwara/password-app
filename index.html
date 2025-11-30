@@ -13,6 +13,78 @@
     />
   </head>
   <body>
-    <script type="module" src="/src/main.js"></script>
+    <section class="password__wrapper">
+      <header class="password__header">
+        <h1 class="title">Password Generator</h1>
+      </header>
+      <main class="password__body">
+        <div class="password__display">
+          <input type="text" name="password" id="password" />
+          <button type="button" class="btn-copy">
+            <img src="./src/assets/icon-copy.svg" alt="icon-copy" />
+          </button>
+        </div>
+        <div class="password__slider">
+          <input
+            type="range"
+            name="password-range"
+            id="password-range"
+            min="1"
+            max="20"
+            value="10"
+          />
+          <label for="password-range" id="counter-range">10</label>
+        </div>
+
+        <div class="checkbox__buttons">
+          <span class="checkbox__span"
+            ><img src="/src/assets/icon-check.svg" alt="icon-check" /><input
+              type="checkbox"
+              hidden
+              name="uppercase"
+              id="uppercase"
+            />Include Uppercase Letters</span
+          >
+          <span class="checkbox__span"
+            ><img src="./src/assets/icon-check.svg" alt="" /><input
+              type="checkbox"
+              name="lowercase"
+              id="lowercase"
+              hidden
+            />Include Lowercase Letters</span
+          >
+          <span class="checkbox__span"
+            ><img src="/src/assets/icon-check.svg" alt="" /><input
+              type="checkbox"
+              name="numbers"
+              id="numbers"
+              hidden
+            />Include Numbers</span
+          >
+          <span class="checkbox__span"
+            ><img src="./src/assets/icon-check.svg" alt="" /><input
+              type="checkbox"
+              name="symbols"
+              id="symbols"
+              hidden
+            />Include Symbols</span
+          >
+        </div>
+        <section class="password__footer">
+          <p>STRENGTH</p>
+          <div class="password__levels">
+            <div class="level-item"></div>
+            <div class="level-item"></div>
+            <div class="level-item"></div>
+            <div class="level-item"></div>
+          </div>
+        </section>
+        <button type="button" class="btn">
+          GENERATE
+          <img src="./src/assets/icon-arrow-right.svg" alt="icon-arrow-right" />
+        </button>
+      </main>
+    </section>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>

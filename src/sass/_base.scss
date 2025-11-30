@@ -1,0 +1,33 @@
+@use 'variables' as vars;
+@use 'mixins' as mix;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: vars.$text;
+  font-weight: bold;
+}
+
+// typography
+
+.text-xl {
+  font-size: 32px;
+  line-height: 42px;
+}
+
+.text-l {
+  font-size: 24px;
+  line-height: 32px;
+}
+.text-m {
+  font-size: 18px;
+  line-height: 24px;
+}
+.text-s {
+  font-size: 16px;
+  line-height: 20px;
+}

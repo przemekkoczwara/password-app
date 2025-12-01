@@ -13,78 +13,113 @@
     />
   </head>
   <body>
-    <section class="password__wrapper">
+    <main class="password__wrapper">
       <header class="password__header">
-        <h1 class="title">Password Generator</h1>
+        <h1 class="title text-s">Password Generator</h1>
       </header>
-      <main class="password__body">
-        <div class="password__display">
-          <input type="text" name="password" id="password" />
-          <button type="button" class="btn-copy">
-            <img src="./src/assets/icon-copy.svg" alt="icon-copy" />
-          </button>
+
+      <section class="password__display">
+        <label for="password" hidden>Password Generator</label>
+        <div class="password__field">
+          <input type="text" name="password" id="password" aria-labelledby="Generated password" /><button
+          type="button"
+          class="btn-copy"
+          aria-label="Copy password"
+        >
+          <img src="./src/assets/icon-copy.svg" alt="icon-copy" aria-hidden="true"/>
+        </button>
+      </section>
         </div>
+      <form class="password__body">
         <div class="password__slider">
+          <div class="label-group">
+            <label for="password-range" class="text-s">Character Length</label>
+            <output id="counter-range" class="counter text-">10</output>
+          </div>
           <input
             type="range"
             name="password-range"
+            class="slider"
             id="password-range"
             min="1"
             max="20"
             value="10"
           />
-          <label for="password-range" id="counter-range">10</label>
         </div>
-
         <div class="checkbox__buttons">
-          <span class="checkbox__span"
-            ><img src="/src/assets/icon-check.svg" alt="icon-check" /><input
+          <label class="checkbox__label">
+            <input
               type="checkbox"
-              hidden
-              name="uppercase"
-              id="uppercase"
-            />Include Uppercase Letters</span
-          >
-          <span class="checkbox__span"
-            ><img src="./src/assets/icon-check.svg" alt="" /><input
-              type="checkbox"
-              name="lowercase"
-              id="lowercase"
-              hidden
-            />Include Lowercase Letters</span
-          >
-          <span class="checkbox__span"
-            ><img src="/src/assets/icon-check.svg" alt="" /><input
-              type="checkbox"
+              class="checkbox__input"
               name="numbers"
               id="numbers"
-              hidden
-            />Include Numbers</span
-          >
-          <span class="checkbox__span"
-            ><img src="./src/assets/icon-check.svg" alt="" /><input
+            />
+            <span class="checkbox__custom"
+              ><img src="/src/assets/icon-check.svg" alt="icon-check"
+            /></span>
+            Include Uppercase Letters
+          </label>
+          <label class="checkbox__label">
+            <input
               type="checkbox"
-              name="symbols"
-              id="symbols"
-              hidden
-            />Include Symbols</span
-          >
+              class="checkbox__input"
+              name="numbers"
+              id="numbers"
+            />
+            <span class="checkbox__custom"
+              ><img src="/src/assets/icon-check.svg" alt="icon-check"
+            /></span>
+            Include Lowercase Letters
+          </label>
+          <label class="checkbox__label">
+            <input
+              type="checkbox"
+              class="checkbox__input"
+              name="numbers"
+              id="numbers"
+            />
+            <span class="checkbox__custom"
+              ><img src="/src/assets/icon-check.svg" alt="icon-check"
+            /></span>
+            Include Numbers
+          </label>
+          <label class="checkbox__label">
+            <input
+              type="checkbox"
+              class="checkbox__input"
+              name="numbers"
+              id="numbers"
+            />
+            <span class="checkbox__custom"
+              ><img src="/src/assets/icon-check.svg" alt="icon-check"
+            /></span>
+            Include Symbols
+          </label>
         </div>
-        <section class="password__footer">
-          <p>STRENGTH</p>
-          <div class="password__levels">
-            <div class="level-item"></div>
-            <div class="level-item"></div>
-            <div class="level-item"></div>
-            <div class="level-item"></div>
+        <section class="password__details" aria-live="polite">
+          <p class="strength__label">STRENGTH</p>
+          <div class="details__group">
+            <span class="level__label text-m" id="strength__value">MEDIUM</span>
+            <ul
+              class="password__levels"
+              role="meter"
+              aria-labelledby="strength__value"
+            >
+              <li class="level-item"></li>
+              <li class="level-item"></li>
+              <li class="level-item active"></li>
+              <li class="level-item"></li>
+            </ul>
           </div>
         </section>
-        <button type="button" class="btn">
+        <button class="btn" type="button">
           GENERATE
-          <img src="./src/assets/icon-arrow-right.svg" alt="icon-arrow-right" />
+          <svg class="btn-img" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
+          </svg>
         </button>
-      </main>
-    </section>
+      </form>
+    </main>
     <script type="module" src="src/main.js"></script>
   </body>
 </html>

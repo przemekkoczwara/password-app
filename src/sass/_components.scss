@@ -14,6 +14,18 @@
 }
 
 .password__display {
+  background-color: vars.$grey-850;
+  width: 100%;
+
+  input {
+    background-color: vars.$grey-850;
+    border: none;
+    color: vars.$grey-200;
+    outline: none;
+  }
+  img {
+    background-color: vars.$grey-850;
+  }
 }
 .password__body {
   background-color: vars.$grey-800;
@@ -57,6 +69,27 @@
     border: 2px solid vars.$accent-green;
     background: vars.$grey-850;
   }
+
+  // .slider::-moz-range-thumb {
+  //   width: 28px;
+  //   height: 28px;
+  //   background-color: vars.$grey-200;
+  //   border-radius: 50%;
+  //   cursor: grab;
+  //   transition: all 0.2s ease;
+  // }
+
+  // .slider:active::-moz-range-thumb {
+  //   border: 2px solid vars.$accent-green;
+  //   background: vars.$grey-850;
+  //   cursor: grabbing;
+  // }
+
+  // .slider::-moz-range-track {
+  //   background: transparent;
+  //   border: none;
+  //   height: 8px;
+  // }
   // checkboxes
 }
 .checkbox__buttons {
@@ -146,10 +179,8 @@
   justify-content: center;
   align-items: center;
   margin-top: 16px;
-
-  .btn-img {
-    margin-left: 16px;
-  }
+  border: 1px solid vars.$accent-green;
+  gap: 16px;
 
   &:hover {
     background: vars.$grey-850;

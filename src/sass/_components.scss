@@ -1,0 +1,130 @@
+@use 'variables' as vars;
+@use 'mixins' as mix;
+
+.password__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 540px;
+
+  .title {
+    color: vars.$grey-600;
+  }
+}
+
+.password__display {
+}
+.password__body {
+  background-color: vars.$grey-800;
+  padding: 16px;
+}
+
+.password__slider {
+  .label-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  input {
+    background-color: vars.$accent-green;
+  }
+  output {
+    color: vars.$accent-green;
+  }
+}
+// checkboxes
+
+.checkbox__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 0;
+
+  .checkbox__label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    font-size: 16px;
+
+    // visially hidden standard checkbox
+    .checkbox__input {
+      display: none;
+    }
+
+    .checkbox__custom {
+      width: 20px;
+      height: 20px;
+      border: 2px solid vars.$grey-200;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .checkbox__custom img {
+      opacity: 0;
+    }
+    .checkbox__input:checked + .checkbox__custom {
+      background-color: vars.$accent-green;
+      border: none;
+    }
+
+    .checkbox__input:checked + .checkbox__custom img {
+      opacity: 1;
+    }
+  }
+}
+
+// password__strength
+
+.password__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background-color: vars.$grey-850;
+
+  .strength__label {
+    color: vars.$grey-600;
+  }
+}
+.details__group {
+  display: flex;
+  // justify-content: right;
+  align-items: center;
+
+  .level__label {
+    color: vars.$grey-200;
+  }
+
+  .password__levels {
+    display: flex;
+    gap: 8px;
+    margin-left: -16px;
+  }
+  .level-item {
+    border: 2px solid vars.$grey-200;
+    width: 10px;
+    height: 28px;
+  }
+}
+// button
+
+.btn {
+  width: 100%;
+  padding: 16px 104px;
+  background: vars.$accent-green;
+  color: vars.$grey-800;
+  font-weight: 500;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+
+  img {
+    margin-left: 16px;
+  }
+}

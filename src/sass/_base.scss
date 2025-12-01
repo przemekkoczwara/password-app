@@ -6,10 +6,21 @@
 *::after {
   box-sizing: border-box;
 }
-
+li {
+  list-style: none;
+}
 body {
   font-family: vars.$text;
-  font-weight: bold;
+  color: vars.$grey-200;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 19, 27, 1) 0%,
+    rgba(8, 7, 11, 1) 59%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 // typography

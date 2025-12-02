@@ -1,35 +1,76 @@
 @use 'variables' as vars;
 @use 'mixins' as mix;
+@use 'functions' as func;
 
 .password__wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 540px;
+  max-width: func.px-to-rem(540); //540px;
+  width: 100%;
 
   .title {
     color: vars.$grey-600;
+
+    @include mix.tablet {
+      font-size: func.px-to-rem(24);
+      line-height: func.px-to-rem(32);
+    }
   }
 }
 
 .password__display {
-  background-color: vars.$grey-850;
+  background-color: vars.$grey-800;
   width: 100%;
+  margin-bottom: 1rem;
+}
+.password__field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: func.px-to-rem(16);
+
+  @include mix.tablet {
+    padding: func.px-to-rem(16) func.px-to-rem(32);
+  }
 
   input {
-    background-color: vars.$grey-850;
+    background-color: inherit;
     border: none;
-    color: vars.$grey-200;
     outline: none;
   }
-  img {
-    background-color: vars.$grey-850;
+
+  .copy__wrapper {
+    display: flex;
+    align-items: center;
+    gap: func.px-to-rem(8);
+    position: relative;
+
+    .copy-feedback {
+      display: none;
+      color: vars.$accent-green;
+      position: absolute;
+      right: func.px-to-rem(36);
+    }
+
+    .copy-btn {
+      background: inherit;
+      border: none;
+      cursor: pointer;
+    }
   }
 }
+
+// body
 .password__body {
   background-color: vars.$grey-800;
-  padding: 16px;
+  padding: func.px-to-rem(16);
+  width: 100%;
+
+  @include mix.tablet {
+    padding: func.px-to-rem(24) func.px-to-rem(32);
+  }
 }
 
 .password__slider {
@@ -37,17 +78,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: func.px-to-rem(8);
+
+    @include mix.tablet {
+      label {
+        font-size: func.px-to-rem(18);
+        line-height: func.px-to-rem(24);
+      }
+    }
 
     .counter {
       color: vars.$accent-green;
+
+      @include mix.tablet {
+        font-size: func.px-to-rem(32);
+        line-height: func.px-to-rem(42);
+      }
     }
   }
 
   .slider {
     -webkit-appearance: none;
     width: 100%;
-    height: 8px;
+    height: func.px-to-rem(8);
     background: linear-gradient(
       to right,
       vars.$accent-green 0%,
@@ -58,8 +111,8 @@
   }
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 28px;
-    height: 28px;
+    width: func.px-to-rem(28);
+    height: func.px-to-rem(28);
     background-color: vars.$grey-200;
     border-radius: 50%;
     cursor: grab;
@@ -95,15 +148,19 @@
 .checkbox__buttons {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 32px 0;
+  gap: func.px-to-rem(16);
+  padding: func.px-to-rem(32) 0;
 
   .checkbox__label {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: func.px-to-rem(16);
     cursor: pointer;
-    font-size: 16px;
+
+    @include mix.tablet {
+      font-size: func.px-to-rem(18);
+      line-height: func.px-to-rem(24);
+    }
 
     // visially hidden standard checkbox
     .checkbox__input {
@@ -111,8 +168,8 @@
     }
 
     .checkbox__custom {
-      width: 20px;
-      height: 20px;
+      width: func.px-to-rem(20);
+      height: func.px-to-rem(20);
       border: 2px solid vars.$grey-200;
       display: flex;
       justify-content: center;
@@ -139,11 +196,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 func.px-to-rem(16);
   background-color: vars.$grey-850;
 
   .strength__label {
     color: vars.$grey-600;
+
+    @include mix.tablet {
+      font-size: func.px-to-rem(18);
+      line-height: func.px-to-rem(24);
+    }
   }
 }
 .details__group {
@@ -153,24 +215,33 @@
 
   .level__label {
     color: vars.$grey-200;
+
+    @include mix.tablet {
+      font-size: func.px-to-rem(24);
+      line-height: func.px-to-rem(32);
+    }
   }
 
   .password__levels {
     display: flex;
-    gap: 8px;
-    margin-left: -16px;
+    gap: func.px-to-rem(8);
+    margin-left: -8px;
   }
   .level-item {
     border: 2px solid vars.$grey-200;
-    width: 10px;
-    height: 28px;
+    width: func.px-to-rem(10);
+    height: func.px-to-rem(28);
+  }
+  .active {
+    border: none;
+    background: vars.$accent-yellow;
   }
 }
 // button
 
 .btn {
   width: 100%;
-  padding: 16px 104px;
+  padding: func.px-to-rem(16) func.px-to-rem(104);
   background: vars.$accent-green;
   color: vars.$grey-800;
   font-weight: 500;
@@ -178,9 +249,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 16px;
+  margin-top: func.px-to-rem(16);
   border: 1px solid vars.$accent-green;
-  gap: 16px;
+  gap: func.px-to-rem(16);
+
+  @include mix.tablet {
+    padding: func.px-to-rem(24) auto;
+    font-size: func.px-to-rem(18);
+    line-height: func.px-to-rem(24);
+  }
 
   &:hover {
     background: vars.$grey-850;

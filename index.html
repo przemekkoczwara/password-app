@@ -17,19 +17,25 @@
       <header class="password__header">
         <h1 class="title text-s">Password Generator</h1>
       </header>
-
       <section class="password__display">
         <label for="password" hidden>Password Generator</label>
         <div class="password__field">
-          <input type="text" name="password" id="password" aria-labelledby="Generated password" /><button
-          type="button"
-          class="btn-copy"
-          aria-label="Copy password"
-        >
-          <img src="./src/assets/icon-copy.svg" alt="icon-copy" aria-hidden="true"/>
-        </button>
-      </section>
+          <input
+            type="text"
+            name="password"
+            class="text-l"
+            id="password"
+            readonly
+            placeholder="PTx1f5DaFX"
+          />
+          <div class="copy__wrapper">
+            <span class="copy-feedback text-s">COPIED</span>
+            <button type="button" class="copy-btn">
+              <img src="./src/assets/icon-copy.svg" alt="icon-copy" />
+            </button>
+          </div>
         </div>
+      </section>
       <form class="password__body">
         <div class="password__slider">
           <div class="label-group">
@@ -52,7 +58,7 @@
               type="checkbox"
               class="checkbox__input"
               name="numbers"
-              id="numbers"
+              id="uppercase"
             />
             <span class="checkbox__custom"
               ><img src="/src/assets/icon-check.svg" alt="icon-check"
@@ -64,7 +70,7 @@
               type="checkbox"
               class="checkbox__input"
               name="numbers"
-              id="numbers"
+              id="lowercase"
             />
             <span class="checkbox__custom"
               ><img src="/src/assets/icon-check.svg" alt="icon-check"
@@ -88,7 +94,7 @@
               type="checkbox"
               class="checkbox__input"
               name="numbers"
-              id="numbers"
+              id="symbols"
             />
             <span class="checkbox__custom"
               ><img src="/src/assets/icon-check.svg" alt="icon-check"
@@ -105,8 +111,8 @@
               role="meter"
               aria-labelledby="strength__value"
             >
-              <li class="level-item"></li>
-              <li class="level-item"></li>
+              <li class="level-item active"></li>
+              <li class="level-item active"></li>
               <li class="level-item active"></li>
               <li class="level-item"></li>
             </ul>
@@ -114,8 +120,16 @@
         </section>
         <button class="btn" type="button">
           GENERATE
-          <svg class="btn-img" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
-            <path fill="currentColor" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
+          <svg
+            class="btn-img"
+            width="12"
+            height="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="currentColor"
+              d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
+            />
           </svg>
         </button>
       </form>

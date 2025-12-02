@@ -39,6 +39,7 @@
     background-color: inherit;
     border: none;
     outline: none;
+    color: vars.$grey-200;
   }
 
   .copy__wrapper {
@@ -234,7 +235,6 @@
   }
   .active {
     border: none;
-    background: vars.$accent-yellow;
   }
 }
 // button

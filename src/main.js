@@ -6,7 +6,7 @@ const copyButton = document.querySelector('.copy-btn'); //copy
 const counter = document.getElementById('counter-range'); // counter
 const slider = document.getElementById('password-range'); // slider
 const checkboxes = document.querySelectorAll('.checkbox__input'); // all checkboxes
-const strenthLabel = document.getElementById('strength__value'); // labels
+const strengthLabel = document.getElementById('strength__value'); // labels
 const strengthLevels = document.querySelectorAll('.level-item'); // levels
 const generateButton = document.querySelector('.btn'); // buttoons
 
@@ -92,6 +92,7 @@ function generatePassword() {
 
   if (availableChars === '') {
     alert('Select chceckbox');
+    return;
   }
 
   let password = '';
@@ -101,12 +102,24 @@ function generatePassword() {
     password += availableChars[random];
   }
 
-  passwordDisplay.value += password;
+  passwordDisplay.value = password;
   console.log('Generated pass:', password);
 
   // password power
 
-  let level = checkboxCount; // 1 2 3 4
+  const passwordLenght = password.length;
+
+  let level;
+
+  if (passwordLenght < 8) {
+    level = 1;
+  } else if (passwordLenght < 12) {
+    level = 2;
+  } else if (passwordLenght < 16) {
+    level = 3;
+  } else {
+    level = 4;
+  }
 
   const labels = ['TOO WEAK!', 'WEAK', 'MEDIUM', 'STRONG'];
   const levelColors = [
@@ -116,7 +129,7 @@ function generatePassword() {
     colors.accentGreen,
   ];
 
-  strenthLabel.textContent = labels[level - 1] || labels[labels.length - 1];
+  strengthLabel.textContent = labels[level - 1];
 
   strengthLevels.forEach((element, index) => {
     if (index < level) {

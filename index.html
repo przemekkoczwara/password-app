@@ -57,7 +57,7 @@
             <input
               type="checkbox"
               class="checkbox__input"
-              name="numbers"
+              name="uppercase"
               id="uppercase"
             />
             <span class="checkbox__custom"
@@ -69,7 +69,7 @@
             <input
               type="checkbox"
               class="checkbox__input"
-              name="numbers"
+              name="lowercase"
               id="lowercase"
             />
             <span class="checkbox__custom"
@@ -93,7 +93,7 @@
             <input
               type="checkbox"
               class="checkbox__input"
-              name="numbers"
+              name="symbols"
               id="symbols"
             />
             <span class="checkbox__custom"
@@ -105,17 +105,17 @@
         <section class="password__details" aria-live="polite">
           <p class="strength__label">STRENGTH</p>
           <div class="details__group">
-            <span class="level__label text-m" id="strength__value">MEDIUM</span>
-            <ul
+            <span class="level__label text-m" id="strength__value"></span>
+            <div
               class="password__levels"
               role="meter"
               aria-labelledby="strength__value"
             >
-              <li class="level-item"></li>
-              <li class="level-item"></li>
-              <li class="level-item"></li>
-              <li class="level-item"></li>
-            </ul>
+              <span class="level-item"></span>
+              <span class="level-item"></span>
+              <span class="level-item"></span>
+              <span class="level-item"></span>
+            </div>
           </div>
         </section>
         <button class="btn" type="button">
